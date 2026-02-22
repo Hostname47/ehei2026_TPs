@@ -118,17 +118,17 @@ Nous allons donc avoir besoin de
         {
             $builder->add(child: 'email', type: EmailType::class);
         }
-    }
 
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults(defaults: [
-            // this is a duplication to explain that you can enable/disable csrf protection on the type.
-            'csrf_protection' => true, // this is not necessary. @see config/packages/csrf.yaml:4
-            
-            'csrf_token_id' => '__subscribe_form',
-            'csrf_field_name' => '_token_'
-        ]);
+        public function configureOptions(OptionsResolver $resolver): void
+        {
+            $resolver->setDefaults(defaults: [
+                // this is a duplication to explain that you can enable/disable csrf protection on the type.
+                'csrf_protection' => true, // this is not necessary. @see config/packages/csrf.yaml:4
+                
+                'csrf_token_id' => '__subscribe_form',
+                'csrf_field_name' => '_token_'
+            ]);
+        }
     }
 
     ```
@@ -234,5 +234,6 @@ Nous allons donc avoir besoin de
     ```
 
     Soumettez votre formulaire, vous devez avoir un résultat qui ressemble à 
+
 
     ![alt text](image-6.png)
